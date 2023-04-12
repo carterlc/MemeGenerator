@@ -63,6 +63,8 @@ main {
   border-radius: 5px;
 }
 
-.form--button:hover {
-  background-color: var(--secondary-color);
+body {
+  background-color: #ffffff;
+  background-image: radial-gradient(#c2c2c2 0.5px, #ffffff 1px);
+  background-size: 20px 20px;
 }
