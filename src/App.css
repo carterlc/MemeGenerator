@@ -11,7 +11,7 @@
 }
 
 main {
-  padding: 3rem;
+  padding: 3vw;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -63,8 +63,14 @@ main {
   border-radius: 5px;
 }
 
+.meme--image {
+  max-width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 body {
   background-color: #ffffff;
   background-image: radial-gradient(#c2c2c2 0.5px, #ffffff 1px);
   background-size: 20px 20px;
 }
+
