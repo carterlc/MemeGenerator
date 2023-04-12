@@ -1,8 +1,13 @@
 import React from 'react'
+import memeData from '../memeData';
 
 export default function Meme() {
+
 function getMeme() {
-    console.log('hello');
+    const memesArray = memeData.data.memes
+    const randomNumber = Math.floor(Math.random() * memesArray.length)
+    const url = memesArray[randomNumber].url
+    console.log(url)
 }
     return (
         <main>
