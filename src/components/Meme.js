@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-// import memeData from '../memeData';
 
 export default function Meme() {
 
+    // Declare two state variables with the 'useState' hook
     const [meme, setMeme] = useState({
         topText: '',
         bottomText: '',
@@ -11,14 +11,16 @@ export default function Meme() {
 
     const [allMemes, setAllMemes] = useState([]);
 
+    // Make an API call to retrieve data from an external source with the 'useEffect' hook
     useEffect(()=> {
         fetch('https://api.imgflip.com/get_memes')
-        .then(res => res.json())
-        .then(data => setAllMemes(data.data.memes))
+        .then(res => res.json()) // Convert the response from the API into JSON format
+        .then(data => setAllMemes(data.data.memes)) // Set the value of the 'allMemes' state variable with the response data
     },[])
 
     console.log(allMemes)
 
+    // Function to generate a new meme
     function getMeme() {
         const randomNumber = Math.floor(Math.random() * allMemes.length)
         const url = allMemes[randomNumber].url
@@ -30,6 +32,7 @@ export default function Meme() {
         })
     }
 
+    // Function to handle changes to the top and bottom text input fields
     function handleChange(event) {
         const {name, value} = event.target
         setMeme(prevMeme => ({
@@ -38,6 +41,7 @@ export default function Meme() {
         }))
     }
 
+    // Render the HTML content
     return (
         <main>
             <div className='form'>
